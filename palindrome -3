@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        ArrayList<Character> list = new ArrayList<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            list.add(str.charAt(i));
+        }
+
+        boolean palindrome = true;
+
+        for (int i = 0; i < list.size() / 2; i++) {
+            if (list.get(i) != list.get(list.size() - 1 - i)) {
+                palindrome = false;
+                break;
+            }
+        }
+
+        if (palindrome)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not a Palindrome");
+    }
+}
+ 
+output:
+Enter a string: madam
+Palindrome
